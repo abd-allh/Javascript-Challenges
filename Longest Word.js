@@ -1,3 +1,6 @@
+// We only return the first value that is the longest!
+// Go check V2
+
 function longestWord(str) {
   let words = str.split(" ")
   let longestWord = ""
