@@ -1,17 +1,26 @@
 /*
  return true only if all values are unique, otherwise false
- using Array, Object, string method lastIndexOf()
- no Set Data Structure
+ using Array, Object, string method lastIndexOf(), Set() Data Structure
 */
 function unique(str) {
-  /*********  Using lastIndexOf()  *********/
-  for (let i = 0; i < str.length; i++) {
-    //console.log(str.lastIndexOf(str[i])) // See what's happening!
-    if (str.lastIndexOf(str[i]) !== i) {
+  /*********  Using Set() Data Structure  *********/
+  let tempStr = new Set() // It only accept unique values!
+
+  for (let letter of str) {
+    if (tempStr.has(letter)) {
       return false
     }
+    tempStr.add(letter)
   }
   return true
+  /*********  Another way using lastIndexOf()  *********/
+  //   for (let i = 0; i < str.length; i++) {
+  //     //console.log(str.lastIndexOf(str[i])) // See what's happening!
+  //     if (str.lastIndexOf(str[i]) !== i) {
+  //       return false
+  //     }
+  //   }
+  //   return true
   /*********  Another way using Object  *********/
   //   let values = {}
   //   for (let letter of str) {
